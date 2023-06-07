@@ -1,0 +1,448 @@
+@charset "UTF-8";
+header {
+	position: sticky;
+}
+
+span {
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  font-family: "roboto", sans-serif;
+  font-size: 16px;
+  margin: auto;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h3, h4, p {
+  margin: 0;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+.fa-arrow-left { /* icone retour */
+  top: 25px;
+  left: 25px;
+  font-size: 20px;
+  color: #353535;
+  cursor: pointer;
+  position: absolute;
+}
+.fa-arrow-left:hover {
+  top: 20px;
+  left: 20px;
+  background-color: #99e2d0;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  padding: 22px 20px 12px 20px;
+  background-color: #ffffff;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.863);
+}
+.logo img {
+  width: 165px;
+  height: 30px;
+}
+
+
+
+/* section 1 *\ *************************************************************************/
+.cover img {
+  object-fit: cover;
+  height: 260px;
+  width: 100%;
+  position: absolute;
+}
+
+a {
+  text-align: left;
+  color: #000000;
+  text-decoration: none;
+}
+
+.box_title { /* container du titre Ohmyfood avec l'icone coeur */
+  margin-top: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 35px 0px 18px;
+  border-radius: 30px 30px 0px 0px;
+  background-color: #f6f6f6;
+  width: auto;
+  position: sticky;
+}
+
+
+.box_title h1 {
+  font-family: "Shrikhand";
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 500;
+  color: #101010;
+}
+.box_title .icon_content { /***** éléments animation du coeur *****/
+  margin-right: 25px;
+}
+.box_title .icon_content .coeur_vide {
+  font-size: 26px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 100;
+  /* ↓↓↓ checkbox du coeur ↓↓↓ */
+}
+.box_title .icon_content .coeur_vide .checkbox input[type=checkbox], .box_title .icon_content .coeur_vide .custom-checkbox .checked {
+  display: none;
+  cursor: pointer;
+}
+.box_title .icon_content .coeur_vide .custom-checkbox input:checked ~ .checked { /* check du coeur */
+  display: inline-block;
+  -webkit-text-stroke-width: 0px;
+  background: -moz-linear-gradient(top, #9e5adc 10%, #dd6eda 100%);
+  background: -webkit-linear-gradient(top, #9e5adc 10%, #dd6eda 100%);
+  background: linear-gradient(to bottom, #9e5adc 10%, #dd6eda 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.box_title .icon_content .coeur_vide .custom-checkbox input:checked ~ .unchecked { /* uncheck du coeur */
+  display: none;
+}
+.box_title .icon_content .coeur_solid .fa-heart { /* background du coeur */
+  font-size: 26px;
+  background: -moz-linear-gradient(top, #9e5adc 10%, #dd6eda 100%);
+  background: -webkit-linear-gradient(top, #9e5adc 10%, #dd6eda 100%);
+  background: linear-gradient(to bottom, #9e5adc 10%, #dd6eda 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 1.7s;
+  position: relative;
+  left: 27px;
+  top: 2px;
+  z-index: 101;
+  transform-origin: center center;
+  transform: scale(0.4);
+  opacity: 0;
+}
+.box_title .icon_content .coeur_solid .fa-heart:hover {
+  transform: scale(1);
+  opacity: 1;
+  cursor: pointer;
+}
+
+#tous-les-menus {
+  max-width: 1055px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* section 2, 3 et 4 */
+.container_btn { /* contient le titre et les 3  boutons */
+  text-align: left;
+  padding: 0px 12px 0px 12px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #f6f6f6;
+}
+.container_btn h2 {
+  margin-left: 7px;
+  font-size: 16px;
+  font-weight: 200;
+  color: #101010;
+}
+.container_btn .title { /* barre verte dessous les titres */
+  border-bottom: 3px solid #99e2d0;
+  padding-bottom: 5px;
+  width: 40px;
+}
+.container_btn .box_btn { /* contient les 3  boutons */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container_btn .box_btn .btn {
+  margin-bottom: 18px;
+  background-color: #ffffff;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.141);
+  width: auto;
+  height: 68px;
+  position: relative;
+  overflow: hidden;
+  /**************  animation progressive boutons des menus ***************/
+}
+.container_btn .box_btn .btn .check_green { /* parametre du ticket vert */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99e2d0;
+  border-radius: 0px 15px 15px 0px;
+  position: absolute;
+  top: 0px;
+  left: 100%;
+  width: 17.5%;
+  height: 100%;
+  transition-duration: 0.5s;
+}
+.container_btn .box_btn .btn .check_green .fa-circle-check { /* animation pour l'icone check */
+  font-size: 22px;
+  color: #ffffff;
+  opacity: 0;
+  object-fit: cover;
+  transition-duration: 0.5s;
+}
+.container_btn .box_btn .btn:hover {
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.418);
+}
+.container_btn .box_btn .btn:hover .text_btn {
+  width: 75%;
+}
+.container_btn .box_btn .btn:hover .check_green { /* ticket vert actif au survole */
+  left: 83%;
+}
+.container_btn .box_btn .btn:hover .check_green .fa-circle-check {
+  opacity: 1;
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.container_btn .box_btn .btn h3 {
+  padding: 13px 0px 0px 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.container_btn .box_btn .btn .text_btn { /* valeur du texte dans le boutton */
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px 10px 10px;
+  width: 91%;
+  transition-duration: 0.5s;
+}
+.container_btn .box_btn .btn .text_btn p { /* pousse le texte avec pointillès*/
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: auto;
+}
+.container_btn .box_btn .btn .text_btn .price { /* div necessaire pour éviter l'overflow sur le prix */
+  font-size: 15px;
+  color: #353535;
+}
+.container_btn .box_btn .btn.btn_1 {
+  animation-duration: 1500ms;
+  animation-delay: 5ms;
+  animation-name: glissement;
+}
+.container_btn .box_btn .btn.btn_2 {
+  animation-duration: 1800ms;
+  animation-delay: 70ms;
+  animation-name: glissement;
+}
+.container_btn .box_btn .btn.btn_3 {
+  animation-duration: 2100ms;
+  animation-delay: 140ms;
+  animation-name: glissement;
+}
+.container_btn .box_btn .btn.btn_4 {
+  animation-duration: 2400ms;
+  animation-delay: 210ms;
+  animation-name: glissement;
+}
+.container_btn .box_btn .btn.btn_5 {
+  animation-duration: 2700ms;
+  animation-delay: 280ms;
+  animation-name: glissement;
+}
+.container_btn .box_btn .btn.btn_6 {
+  animation-duration: 3000ms;
+  animation-delay: 350ms;
+  animation-name: glissement;
+}
+.container_btn .box_btn .btn.btn_7 {
+  animation-duration: 2300ms;
+  animation-delay: 420ms;
+  animation-name: glissement;
+}
+.container_btn .box_btn .btn.btn_8 {
+  animation-duration: 3600ms;
+  animation-delay: 490ms;
+  animation-name: glissement;
+}
+.container_btn .box_btn .btn.btn_9 {
+  animation-duration: 3900ms;
+  animation-delay: 560ms;
+  animation-name: glissement;
+}
+.container_btn .box_btn .btn.btn_10 {
+  animation-duration: 4200ms;
+  animation-delay: 630ms;
+  animation-name: glissement;
+}
+@keyframes glissement {
+  from {
+    margin-bottom: 20%;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0%;
+    opacity: 1;
+  }
+}
+
+/* section 5 *\ *************************************************************************/
+.container_commander {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 100px 20px;
+  background-color: #f6f6f6;
+}
+.container_commander .commander { /* bouton rose 'commander' */
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  width: 186px;
+  height: 50px;
+  background: linear-gradient(#dd6eda, #9e5adc);
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.418);
+  border-radius: 25px;
+}
+.container_commander .commander:hover {
+  font-weight: 500;
+  background: linear-gradient(356deg, #9356DC 0%, #FF79DA 100%);
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.671);
+}
+
+/* footer *\ *************************************************************************/
+.BackgroundFooter {
+  background-color: #353535;
+  width: auto;
+  text-align: left;
+  padding: 22px 20px 25px 24px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+.BackgroundFooter .font { /* Logo dans le footer */
+  font-family: "Shrikhand";
+  font-size: 18px;
+  margin: auto;
+}
+.BackgroundFooter .typelist { /* Liste  des liens */
+  display: flex;
+  flex-direction: column;
+}
+.BackgroundFooter .typelist a {
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+.BackgroundFooter .typelist a:hover {
+  color: #99e2d0;
+}
+.BackgroundFooter .typelist i {
+  font-size: 12px;
+  width: 12px;
+  height: 14px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1023px) {
+  .BackgroundFooter .font {
+    position: static;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .BackgroundFooter .typelist {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .BackgroundFooter .typelist a {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .BackgroundFooter {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 25px;
+  }
+  
+  .BackgroundFooter .font {
+    position: static;
+    margin-bottom: 0;
+    margin-right: auto;
+    order:2;
+  }
+  
+  .BackgroundFooter .typelist {
+    flex-direction: row;
+    margin-left: auto;
+  }
+  
+  .BackgroundFooter .typelist a {
+    margin-bottom: 0;
+    margin-left: 20px;
+  }
+  
+  .BackgroundFooter .typelist a:first-child {
+    margin-left: 0;
+  }
+}
+
+
+/* *****\ ♦ Responsive design ♦ \***** */
+@media screen and (min-width: 1024px) {
+  .fa-arrow-left { /* icone retour */
+    top: 20px;
+    font-size: 26px;
+  }
+  .fa-arrow-left:hover {
+    top: 15px;
+  }
+  .cover img {
+    height: 350px;
+  }
+  .box_title {
+    margin-top: 300px;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 0px 30% 0px 30%;
+    border-radius: 50px 50px 0px 0px;
+  }
+  .container_btn {
+    padding: 27px 30% 0px 30%;
+  }
+  .container_commander {
+    padding: 20px 20px 40px 20px;
+  }
+  .container_commander .commander {
+    width: 186px;
+    height: 50px;
+  }
+
+}
+
+/*# sourceMappingURL=restaurant.css.map */
