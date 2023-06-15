@@ -51,8 +51,8 @@ h4 {
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.863);
 }
 .logo img {
-  width: 165px;
-  height: 30px;
+  height: 34.20px;
+  width: 200px;
 }
 
 
@@ -387,7 +387,7 @@ a {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 22px 25px;
+    padding: 22px 25px 22px 15rem;
   }
   
   .BackgroundFooter .font {
@@ -395,11 +395,13 @@ a {
     margin-bottom: 0;
     margin-right: auto;
     order:2;
+    padding-left: 10rem;
   }
   
   .BackgroundFooter .typelist {
     flex-direction: row;
     margin-left: auto;
+    padding-left: 9rem;
   }
   
   .BackgroundFooter .typelist a {
